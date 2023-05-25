@@ -1,5 +1,4 @@
-const { config } = require('dotenv');
-config();
+require('dotenv').config();
 
 const express = require("express");
 const path = require('path');
@@ -7,9 +6,7 @@ const cookieParser = require("cookie-parser");
 const swaggerJsdoc = require("swagger-jsdoc");
 const swaggerUi = require("swagger-ui-express");
 
-
 const indexRouter = require("./routes/index.js");
-
 
 const app = express();
 const port = process.env.PORT || 3000
