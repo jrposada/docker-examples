@@ -9,9 +9,8 @@ services:
             target: base
         ports:
             - "${PORT:-3000}:${PORT:-3000}"
-        networks:
-            - docker-example
+
 networks:
-  docker-example:
+  default:
     name: docker-example
     external: true
