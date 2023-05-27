@@ -4,6 +4,8 @@ The way it works is by first defining a service for the DB instance where we set
 
 The second service is the pgAdmin portal instance. This service will run, by default, in port 80, but we will access it through port 5050 on our Docker host.
 
+The last `networks` configuration aims to make the services available to other containers. By default dockers will run on different networks, which means they can not communicate between them. However it is possible to create a custom user network where different containers can run and communicate. Since we want all the services running on the docker compose to be accessible configuration is done to the `default` network. The name can be whatever the user wants to name it (will be used by other containers to identify the network) and `attachable` must be true in order for it to be publicly available.
+
 The rest of variables defined on the `environment` nodes can can be are documented on the respective documentation page for the images: [postgres](https://hub.docker.com/_/postgres/) and [pgAdmin](https://www.pgadmin.org/docs/pgadmin4/latest/container_deployment.html)
 
 1. Run `docker compose up -d`
